@@ -75,11 +75,11 @@ var xtransforms = ["transform",
  * Ants class
  * 
  * Parameters:
- *   max     -> max ants (50)
+ *   max     -> max ants (1000)
  *   id      -> the ants container id (default to body,fixed)
  *   z       -> z index (200)
  *   color   -> color ("black")
- *   newRate -> new ant interval (5000)
+ *   newRate -> new ant interval (100)
  *   eaten   -> eaten function (null)
  *   start   -> How many ants to start with (0)
  *   forage  -> Whether the ants will forage for food (false)
@@ -107,7 +107,7 @@ var xtransforms = ["transform",
  *
  * Methods:
  *   fixedHome(): Returns a fixed home location
- *   newAnt():    Adds a new Ant
+ *   newAnt(UpArrow):    Adds a new Ant
  *   moveAnts():  Move all the Ants
  *   killAll():   Start the killing procedure
  *
@@ -119,7 +119,7 @@ function Ants(params) {
     this.newTimer;
     this.ants = [];
     this.killing = false;
-    this.maxAnts = params.max || 50;
+    this.maxAnts = params.max || 1000;
     this.id = params.id;
     this.z = params.z || 200;
     this.color = params.color || "black";
